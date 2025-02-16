@@ -1,0 +1,1 @@
+CONFIG_FILE="lzd.config.json"

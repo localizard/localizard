@@ -1,0 +1,35 @@
+{
+  "name": "localizard",
+  "version": "0.1.0",
+  "description": "CLI tool for managing localization JSON files",
+  "bin": {
+    "lzd": "./bin/lzd.sh"
+  },
+  "scripts": {
+    "build": "chmod +x bin/*.sh scripts/*.sh common/*.sh test/*.bats && echo 'Build completed!'",
+    "test": "bats test/*.bats"
+  },
+  "author": "Roland Kun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/localizard/localizard/issues"
+  },
+  "homepage": "https://github.com/localizard/localizard",
+  "keywords": [
+    "localization",
+    "i18n",
+    "internationalization",
+    "translations",
+    "json",
+    "locale",
+    "cli",
+    "localization-cli",
+    "language",
+    "i18n-tool",
+    "json-editor",
+    "translation-tool",
+    "automation",
+    "localization-manager",
+    "localizard"
+  ]
+}
