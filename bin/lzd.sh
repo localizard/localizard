@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Get the directory of the script
-BASE_DIR="$(cd -- "$(dirname "$(realpath "$0")")" >/dev/null 2>&1 || exit; pwd -P)"
+BASE_DIR="${BASE_DIR:-$(cd -- "$(dirname "$(realpath "$0")")" >/dev/null 2>&1 || exit; pwd -P)}"
 
 # Check if running from global install
 if [ ! -d "$BASE_DIR/scripts" ]; then 
