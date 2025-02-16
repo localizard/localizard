@@ -81,7 +81,7 @@ init_existing_locales() {
 }
 
 init_locales() {
-  sh "$COMMON_PATH/check_config_file.sh" "exists"
+  bash "$COMMON_PATH/check_config_file.sh" "exists"
   
   if [ -n "$1" ]; then
     case "$1" in
