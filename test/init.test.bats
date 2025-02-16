@@ -3,7 +3,6 @@
 BASE_DIR="$(pwd)"
 SCRIPT_PATH="$BASE_DIR/scripts"
 CONSTANTS_PATH="$BASE_DIR/common/constants.sh"
-# CONSTANTS_PATH="$BASE_DIR/common/constants.sh"
 
 source "$CONSTANTS_PATH"
 

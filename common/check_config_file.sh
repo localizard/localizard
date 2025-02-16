@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR="$(cd -- "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
-source "$SCRIPT_DIR/constants.sh"
+BASE_DIR="$(pwd)"
+CONSTANTS_PATH="$BASE_DIR/common/constants.sh"
+
+source "$CONSTANTS_PATH"
 
 check_config_file() {
   local mode="$1"  # "exists" or "not_exists"
