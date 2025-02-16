@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Get the directory of the script
 BASE_DIR="${BASE_DIR:-$(cd -- "$(dirname "$(realpath "$0")")" >/dev/null 2>&1 || exit; pwd -P)}"
