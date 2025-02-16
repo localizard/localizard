@@ -27,13 +27,13 @@ jobs:
       - name: Print current working directory
         run: pwd
 
-      # - name: Install Bats (Bash Automated Testing System)
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y bats
+      - name: Install Bats (Bash Automated Testing System)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bats
 
-      # - name: Set BASE_DIR
-      #   run: echo "BASE_DIR=$GITHUB_WORKSPACE" >> $GITHUB_ENV
+      - name: Set BASE_DIR
+        run: echo "BASE_DIR=$GITHUB_WORKSPACE" >> $GITHUB_ENV
 
-      # - name: Run tests
-      #   run: bats test/*.bats
+      - name: Run tests
+        run: bats test/*.bats
