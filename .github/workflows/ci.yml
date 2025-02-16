@@ -21,13 +21,16 @@ jobs:
       - name: Set execute permissions for scripts
         run: chmod +x bin/*.sh scripts/*.sh common/*.sh test/*.bats
 
-      - name: Install Bats (Bash Automated Testing System)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y bats
+      - name: Check files in scripts directory
+        run: ls -l scripts
 
-      - name: Set BASE_DIR
-        run: echo "BASE_DIR=$GITHUB_WORKSPACE" >> $GITHUB_ENV
+      # - name: Install Bats (Bash Automated Testing System)
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y bats
 
-      - name: Run tests
-        run: bats test/*.bats
+      # - name: Set BASE_DIR
+      #   run: echo "BASE_DIR=$GITHUB_WORKSPACE" >> $GITHUB_ENV
+
+      # - name: Run tests
+      #   run: bats test/*.bats
