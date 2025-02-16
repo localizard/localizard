@@ -1,8 +1,8 @@
 #!/usr/bin/env bats
 
-
-SCRIPT_PATH="$(cd -- "$(dirname "${BATS_TEST_FILENAME}")/../scripts" >/dev/null 2>&1 && pwd)"
-CONSTANTS_PATH="$(cd -- "$(dirname "${BATS_TEST_FILENAME}")/../common" >/dev/null 2>&1 && pwd)/constants.sh"
+BASE_DIR="${BASE_DIR:-$(pwd)}"
+SCRIPT_PATH="$BASE_DIR/scripts"
+CONSTANTS_PATH="$BASE_DIR/common/constants.sh"
 
 source "$CONSTANTS_PATH"
 
