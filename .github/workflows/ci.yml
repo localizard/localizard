@@ -27,10 +27,16 @@ jobs:
       - name: Print current working directory
         run: pwd
 
-      - name: Install dependencies (Bats and jq)
+      - name: Install dependencies (Bats, jq, dos2unix)
         run: |
           sudo apt-get update
-          sudo apt-get install -y bats jq
+          sudo apt-get install -y bats jq dos2unix
+
+      - name: Convert files to LF line endings
+        run: find . -type f -exec dos2unix {} \;
+
+      - name: Add bin directory to PATH
+        run: echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
 
       - name: Set BASE_DIR
         run: echo "BASE_DIR=$GITHUB_WORKSPACE" >> $GITHUB_ENV
