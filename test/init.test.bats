@@ -160,6 +160,12 @@ EOF
   # Check that the command failed
   [ "$status" -eq 1 ]
 
+  expected="❌ Error: Configuration file $CONFIG_FILE already exists. Aborting"
+  if ! echo "$output" | grep -q "$expected"; then
+    echo "Expected: $expected"
+    echo "Got: $output"
+    return 1
+  fi
   # Check that the error message appeared correctly
   echo "$output" | grep -q "❌ Error: Configuration file $CONFIG_FILE already exists. Aborting"
   [ "$?" -eq 0 ]
