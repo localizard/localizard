@@ -24,6 +24,9 @@ jobs:
       - name: Check files in scripts directory
         run: ls -l scripts
 
+      - name: Print current working directory
+        run: pwd
+
       # - name: Install Bats (Bash Automated Testing System)
       #   run: |
       #     sudo apt-get update
