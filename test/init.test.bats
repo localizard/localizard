@@ -1,8 +1,8 @@
 #!/usr/bin/env bats
 
-# BASE_DIR="${BASE_DIR:-$(pwd)}"
-SCRIPT_PATH="$(pwd)/scripts"
-CONSTANTS_PATH="$(pwd)/common/constants.sh"
+BASE_DIR="$(pwd)"
+SCRIPT_PATH="$BASE_DIR/scripts"
+CONSTANTS_PATH="$BASE_DIR/common/constants.sh"
 # CONSTANTS_PATH="$BASE_DIR/common/constants.sh"
 
 source "$CONSTANTS_PATH"
