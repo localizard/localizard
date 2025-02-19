@@ -38,7 +38,6 @@ show_help() {
   echo "        --files, -f <locales>   Specify which locales to modify (comma-separated, e.g., hu,en,de)"
   echo ""
   echo "  delete        - Delete a translation key from locales JSON"
-  echo "  clear         - Remove CLI configuration & locale JSON files"
   echo ""
   echo "Use 'lzd --help' to show this help message."
   echo ""
@@ -81,8 +80,7 @@ show_menu() {
   echo "  2) Add            - Add a new translation key to locales JSON"
   echo "  3) Edit           - Modify a translation value in locales JSON"
   echo "  4) Delete         - Delete a translation key from locales JSON"
-  echo "  5) Clear          - Remove CLI configuration & locale JSON files"
-  echo "  6) Exit"
+  echo "  5) Exit"
   echo ""
 }
 
@@ -97,8 +95,7 @@ while true; do
     2) execute_command "add" ;;
     3) execute_command "edit" ;;
     4) execute_command "delete" ;;
-    5) execute_command "clear" ;;
-    6) echo "👋 Exiting..."; exit 0 ;;
+    5) echo "👋 Exiting..."; exit 0 ;;
     *) echo "❌ Invalid option. Please try again." ;;
   esac
 
