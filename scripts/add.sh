@@ -5,7 +5,7 @@ set -e # Exit immediately if a command exits with a non-zero status
 COMMON_PATH="$(cd -- "$(dirname "$0")/../common" >/dev/null 2>&1 && pwd)"
 source "$COMMON_PATH/constants.sh"
 
-sh "$COMMON_PATH/check_config_file.sh" "not_exists"
+bash "$COMMON_PATH/check_config_file.sh" "not_exists"
 
 LOCALES_DIR=$(jq -r '.locales_dir' "$CONFIG_FILE")
 LOCALES=$(jq -r '.locales[]' "$CONFIG_FILE")
