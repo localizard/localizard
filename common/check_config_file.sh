@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE_DIR="$(pwd)"
+BASE_DIR="${BASE_DIR:-$(cd -- "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && pwd)}"
 CONSTANTS_PATH="$BASE_DIR/common/constants.sh"
 
 source "$CONSTANTS_PATH"
