@@ -5,20 +5,12 @@ set -e # Exit immediately if a command exits with a non-zero status
 COMMON_PATH="$(cd -- "$(dirname "$0")/../common" >/dev/null 2>&1 && pwd)"
 source "$COMMON_PATH/constants.sh"
 
-sh "$COMMON_PATH/check_config_file.sh" "not_exists"
+bash "$COMMON_PATH/check_config_file.sh" "not_exists"
+bash "$COMMON_PATH/check_locale_files.sh"
 
 # Read values from the JSON config using `jq`
 LOCALES_DIR=$(jq -r '.locales_dir' "$CONFIG_FILE")
 LOCALES=$(jq -r '.locales[]' "$CONFIG_FILE")
-
-# Validate that the JSON files exist
-for locale in $LOCALES; do
-  locale_file="$LOCALES_DIR/$locale.json"
-  if [ ! -f "$locale_file" ]; then
-    echo "❌ Error: Missing locale file: $locale_file"
-    exit 1
-  fi
-done
 
 # Prompt for the key to delete
 echo "Enter the JSON key to delete (e.g., sign_in.header.title):"

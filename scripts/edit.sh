@@ -45,19 +45,13 @@ if [ -z "$LOCALES" ]; then
   fi
 fi
 
-# Filter out empty locales and validate that the selected JSON files exist
+# Check if the locale files exist
 LOCALES=$(echo "$LOCALES" | tr ' ' '\n' | grep -v '^$' | tr '\n' ' ')
-for locale in $LOCALES; do
-  if [ -z "$locale" ]; then
-    continue  # Skip empty elements
-  fi
-
-  locale_file="$LOCALES_DIR/$locale.json"
-  if [ ! -f "$locale_file" ]; then
-    echo "❌ Error: Missing locale file: $locale_file"
-    exit 1
-  fi
-done
+if [ "$(echo "$LOCALES" | wc -w)" -eq 1 ]; then
+  bash "$COMMON_PATH/check_locale_files.sh" "$LOCALES"
+else
+  bash "$COMMON_PATH/check_locale_files.sh"
+fi
 
 # Prompt for the key to modify
 echo "Enter the JSON key to modify (e.g., sign_in.header.title):"
@@ -69,7 +63,7 @@ FORMATTED_KEY=$(echo "$key" | tr '[:lower:]' '[:upper:]')
 # Verify if the key exists in all selected locale files
 for locale in $LOCALES; do
   locale_file="$LOCALES_DIR/$locale.json"
-  if ! jq -e ".${FORMATTED_KEY} // empty" "$locale_file" >/dev/null 2>&1; then
+  if ! bash "$COMMON_PATH/check_key_exists.sh" "$locale_file" "$FORMATTED_KEY"; then
     echo "❌ Error: Key '$FORMATTED_KEY' not found in $locale_file"
     exit 1
   fi
