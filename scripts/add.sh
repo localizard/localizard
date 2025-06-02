@@ -46,9 +46,9 @@ add_localization() {
     exit 1
   fi
 
-  # Validate key: Only letters, numbers, and underscore (_)
-  if [[ ! "$key" =~ ^[a-zA-Z0-9_]+$ ]]; then
-    echo "❌ Error: Invalid key format. Only letters (A-Z, a-z), numbers (0-9), and underscores (_) are allowed."
+  # Validate key: Only letters, numbers, underscore (_) and dot (.)
+  if [[ ! "$key" =~ ^[a-zA-Z0-9_\.]+$ ]]; then
+    echo "❌ Error: Invalid key format. Only letters (A-Z, a-z), numbers (0-9), underscores (_) and dot (.) are allowed."
     exit 1
   fi
 

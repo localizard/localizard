@@ -127,6 +127,6 @@ EOF
 
   [ "$status" -eq 1 ]
 
-  echo "$output" | grep -q "❌ Error: Invalid key format. Only letters (A-Z, a-z), numbers (0-9), and underscores (_) are allowed."
+  echo "$output" | grep -q "❌ Error: Invalid key format. Only letters (A-Z, a-z), numbers (0-9), underscores (_) and dot (.) are allowed."
   [ "$?" -eq 0 ]
 }
