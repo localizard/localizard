@@ -11,6 +11,13 @@
   },
   "author": "Roland Kun",
   "license": "MIT",
+  "files": [
+    "bin/",
+    "common/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
   "bugs": {
     "url": "https://github.com/localizard/localizard/issues"
   },
