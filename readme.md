@@ -1,5 +1,9 @@
 # 🦎 Localizard
 
+> ⚠️ **Warning: This package is still under active development.**  
+> It is currently in an early version (`0.x.x`), and breaking changes may occur.  
+> Feel free to try it out and give feedback, but avoid using it in production just yet.
+
 **Localizard** is a simple and powerful command-line tool for managing localization JSON files. With Localizard, you can easily initialize, add, edit, and delete localization keys from your JSON files without manually modifying them. This makes managing translations for your applications much more efficient!
 
 ## 🚀 Features
